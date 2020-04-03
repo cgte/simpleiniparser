@@ -3,6 +3,10 @@
 *.pyc
 __pycache__
 
+*.egg-info*
+build/
+dist/
+
 venv/
 venv2/
 .tox/
