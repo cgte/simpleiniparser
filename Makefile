@@ -22,7 +22,7 @@ build_all: sdist wheel
 .ONESHELL:
 .PHONY:
 twine:
-	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+	twine upload --verbose --repository-url https://test.pypi.org/legacy/ dist/*
 
 .ONESHELL:
 .PHONY:
