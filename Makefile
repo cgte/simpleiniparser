@@ -17,17 +17,23 @@ wheel:
 
 .ONESHELL:
 .PHONY:
+build_all: sdist wheel
+
+.ONESHELL:
+.PHONY:
 twine:
 	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 .ONESHELL:
 .PHONY:
-build_push: cleanbuild sdist wheel twine
+build_push: cleanbuild build_all twine
 
 .ONESHELL:
 .PHONY:
 cleanbuild:
 	rm  dist/*
+
+
 .ONESHELL:
 .PHONY:
 check_install:
