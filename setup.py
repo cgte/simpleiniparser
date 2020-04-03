@@ -13,6 +13,7 @@ Filling your ini file with pythonic values will make you save time.
 """
 with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = "%s\n%s" % (long_description, f.read())
+long_description_content_type = "text/markdown"
 url = ""
 packages = [
     "simpleiniparser",
@@ -37,6 +38,7 @@ setup(
     version=version,
     description=description,
     long_description=long_description,
+    long_description_content_type=long_description_content_type,
     url=url,
     packages=packages,
     package_data=package_data,
