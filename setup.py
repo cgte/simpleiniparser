@@ -4,10 +4,11 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 name = "simpleiniparser"
-version = "0.0.1"
+version = "0.0.2"
 description = "Simple tooling to seamlessly parse ini file"
 long_description = """
 It may feel boring to rewrite a parser fore every project you start.
+
 Filling your ini file with pythonic values will make you save time.
 """
 url = ""
