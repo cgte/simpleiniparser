@@ -11,6 +11,8 @@ It may feel boring to rewrite a parser fore every project you start.
 
 Filling your ini file with pythonic values will make you save time.
 """
+with open(path.join(here, "README.md"), encoding="utf-8") as f:
+    long_description = "%s\n%s" % (long_description, f.read())
 url = ""
 packages = [
     "simpleiniparser",
