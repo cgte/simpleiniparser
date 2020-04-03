@@ -1,0 +1,9 @@
+*.sw*
+
+*.pyc
+__pycache__
+
+venv/
+venv2/
+.tox/
+.coverage
