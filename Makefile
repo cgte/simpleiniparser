@@ -22,6 +22,14 @@ twine:
 
 .ONESHELL:
 .PHONY:
+build_push: cleanbuild sdist wheel twine
+
+.ONESHELL:
+.PHONY:
+cleanbuild:
+	rm  dist/*
+.ONESHELL:
+.PHONY:
 check_install:
 	deactivate
 	python -m venv ven_check
