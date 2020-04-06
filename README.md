@@ -1,3 +1,4 @@
+Does the boring stuff for you as long as you behave like a conscenting adult.
 
 ```python
 

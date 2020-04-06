@@ -1,5 +1,11 @@
 .ONESHELL:
 .PHONY:
+localupdate:
+	. venv/bin/activate
+	python setup.py sdist bdist_wheel  upload -v -r internal
+
+.ONESHELL:
+.PHONY:
 setup:
 	pip install -U pip twine setuptools
 
@@ -38,7 +44,8 @@ cleanbuild:
 .PHONY:
 check_install:
 	deactivate
-	python -m venv ven_check
-	. venv/bin/activate
+	python -m venv venv_check
+	. venv_check/bin/activate
+	make setup
 	pip install --index-url  https://test.pypi.org/simple simpleiniparser
 
