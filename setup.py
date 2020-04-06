@@ -20,7 +20,11 @@ packages = [
 ]
 package_data = {}
 install_requires = []
+test_requires = []
+extras_require = {"dev": ["pytest", "pytest-cov", "tox"]}
 author = "Colin Goutte"
+author_email = "colin.goutte@free.fr"
+# package_dir = {"": "simpleiniparser"}
 license = "Apache 2"
 classifiers = [
     "Programming Language :: Python :: 2",
@@ -43,8 +47,11 @@ setup(
     packages=packages,
     package_data=package_data,
     install_requires=install_requires,
+    extras_require=extras_require,
     author=author,
+    author_email=author_email,
     license=license,
     classifiers=classifiers,
     keywords=keywords,
+    # package_dir=package_dir,
 )
