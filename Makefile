@@ -49,3 +49,6 @@ check_install:
 	make setup
 	pip install --index-url  https://test.pypi.org/simple simpleiniparser
 
+truc:
+	echo `git describe --abbrev=0 --tag`
+	twine upload --verbose -r internal dist/*`git describe --abbrev=0 --tag`*
