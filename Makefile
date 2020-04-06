@@ -16,12 +16,16 @@ setup2:
 .PHONY:
 ship2:
 	. venv2/bin/activate
-	bumpversion patch
 	python setup.py sdist bdist_wheel
 	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
+
+.ONESHELL:
+.PHONY:
+ship:
+	bumpversion patch
+	make ship3
 	git push
-
-
+	make ship2
 
 .ONESHELL:
 .PHONY:
@@ -31,12 +35,10 @@ rpm:
 
 .ONESHELL:
 .PHONY:
-ship:
+ship3:
 	. venv/bin/activate
-	bumpversion patch
 	python setup.py sdist bdist_wheel
 	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
-	git push
 
 .ONESHELL:
 .PHONY:
