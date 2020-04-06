@@ -4,7 +4,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 name = "simpleiniparser"
-version = "0.0.5"
+version = "0.0.8"
 description = "Simple tooling to seamlessly parse ini file"
 long_description = """
 It may feel boring to rewrite a parser fore every project you start.
@@ -21,7 +21,7 @@ packages = [
 package_data = {}
 install_requires = []
 test_requires = []
-extras_require = {"dev": ["pytest", "pytest-cov", "tox"]}
+extras_require = {"dev": ["pytest", "pytest-cov", "tox", "wheel"]}
 author = "Colin Goutte"
 author_email = "colin.goutte@free.fr"
 # package_dir = {"": "simpleiniparser"}
