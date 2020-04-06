@@ -65,6 +65,6 @@ truc:
 .PHONY:
 ship:
 	. venv/bin/activate
-	python setup.py sdist bdist_rpm bdist_wheel
-	twine upload --verbose -r internal dist/*`git describe --abbrev=0 --tag`*
-
+	#python setup.py sdist bdist_rpm bdist_wheel
+	python setup.py sdist bdist_wheel bdist_rpm upload -v -r internal
+	#python setup.py upload -r internal  -- dist/*`git describe --abbrev=0 --tag`*
