@@ -16,9 +16,6 @@ ship:
 	python setup.py sdist bdist_wheel
 	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
 
-.ONESHELL:
-.PHONY:
-build_push: cleanbuild build_all twine
 
 .ONESHELL:
 .PHONY:
