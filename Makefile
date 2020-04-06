@@ -17,7 +17,7 @@ setup2:
 ship2:
 	. venv2/bin/activate
 	python setup.py sdist bdist_wheel
-	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
+	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*py2*
 
 .ONESHELL:
 .PHONY:
