@@ -20,6 +20,16 @@ ship:
 
 .ONESHELL:
 .PHONY:
+release:
+	. venv/bin/activate
+	git push
+	python setup.py sdist bdist_wheel
+	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
+
+hipmajor:
+
+.ONESHELL:
+.PHONY:
 cleanbuild:
 	rm  dist/*
 
