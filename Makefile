@@ -36,7 +36,7 @@ build_all: sdist wheel rpm
 .PHONY:
 twine:
 	. venv/bin/activate
-	python setup.py sdist bdist_rpm bdist_wheel
+	python setup.py sdist bdist_wheel
 	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
 
 .ONESHELL:
