@@ -23,15 +23,9 @@ ship2:
 .PHONY:
 ship:
 	bumpversion patch
-	make ship3
 	git push
+	make ship3
 	make ship2
-
-.ONESHELL:
-.PHONY:
-rpm:
-	. venv/bin/activate
-	python setup.py bdist_rpm
 
 .ONESHELL:
 .PHONY:
@@ -43,16 +37,22 @@ ship3:
 .ONESHELL:
 .PHONY:
 release:
-	. venv/bin/activate
+	bumpversion minor
 	git push
-	python setup.py sdist bdist_wheel
-	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
+	make ship2
+	make ship3
 
 
 .ONESHELL:
 .PHONY:
 cleanbuild:
 	rm  dist/*
+
+.ONESHELL:
+.PHONY:
+rpm:
+	. venv/bin/activate
+	python setup.py bdist_rpm
 
 
 .ONESHELL:
