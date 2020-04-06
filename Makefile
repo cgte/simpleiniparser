@@ -23,7 +23,14 @@ wheel:
 
 .ONESHELL:
 .PHONY:
-build_all: sdist wheel
+rpm:
+	. venv/bin/activate
+	python setup.py bdist_rpm
+
+
+.ONESHELL:
+.PHONY:
+build_all: sdist wheel rpm
 
 .ONESHELL:
 .PHONY:
@@ -57,7 +64,7 @@ truc:
 .ONESHELL:
 .PHONY:
 ship:
-	. venv_check/bin/activate
+	. venv/bin/activate
 	python setup.py sdist bdist_rpm bdist_wheel
 	twine upload --verbose -r internal dist/*`git describe --abbrev=0 --tag`*
 
