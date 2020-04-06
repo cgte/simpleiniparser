@@ -1,7 +1,27 @@
 .ONESHELL:
 .PHONY:
 setup:
+	. venv/bin/activate
 	pip install -U pip twine setuptools
+	pip install -e .[dev]
+
+.ONESHELL:
+.PHONY:
+setup2:
+	. venv2/bin/activate
+	pip install -U pip twine setuptools
+	pip install -e .[dev]
+
+.ONESHELL:
+.PHONY:
+ship2:
+	. venv2/bin/activate
+	bumpversion patch
+	python setup.py sdist bdist_wheel
+	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
+	git push
+
+
 
 .ONESHELL:
 .PHONY:
@@ -26,7 +46,6 @@ release:
 	python setup.py sdist bdist_wheel
 	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
 
-hipmajor:
 
 .ONESHELL:
 .PHONY:
