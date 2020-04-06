@@ -13,9 +13,10 @@ rpm:
 .PHONY:
 ship:
 	. venv/bin/activate
+	bumpversion patch
 	python setup.py sdist bdist_wheel
 	twine upload --verbose -r testpypi dist/*`git describe --abbrev=0 --tag`*
-
+	git push
 
 .ONESHELL:
 .PHONY:
