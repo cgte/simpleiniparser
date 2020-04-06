@@ -50,5 +50,14 @@ check_install:
 	pip install --index-url  https://test.pypi.org/simple simpleiniparser
 
 truc:
-	echo `git describe --abbrev=0 --tag`
+
 	twine upload --verbose -r internal dist/*`git describe --abbrev=0 --tag`*
+
+
+.ONESHELL:
+.PHONY:
+ship:
+	. venv_check/bin/activate
+	python setup.py sdist bdist_rpm bdist_wheel
+	twine upload --verbose -r internal dist/*`git describe --abbrev=0 --tag`*
+
