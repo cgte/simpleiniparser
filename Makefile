@@ -35,7 +35,9 @@ build_all: sdist wheel rpm
 .ONESHELL:
 .PHONY:
 twine:
-	twine upload --verbose --repository-url https://test.pypi.org/legacy/ dist/*
+	. venv/bin/activate
+	python setup.py sdist bdist_rpm bdist_wheel
+	twine upload --verbose -r testpypi dist/*
 
 .ONESHELL:
 .PHONY:
