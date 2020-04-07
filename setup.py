@@ -20,7 +20,7 @@ except TypeError:  # Python2
 
 
 long_description_content_type = "text/markdown"
-url = ""
+url = "https://github.com/cgte/simpleiniparser"
 packages = [
     "simpleiniparser",
 ]
