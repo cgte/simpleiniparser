@@ -23,9 +23,10 @@ ship2:
 .PHONY:
 ship:
 	bumpversion patch
-	git push
+	git push origin `git describe --abbrev=0 --tag`
 	make ship3
 	make ship2
+	make public
 
 .ONESHELL:
 .PHONY:
@@ -41,6 +42,7 @@ release:
 	git push origin `git describe --abbrev=0 --tag`
 	make ship2
 	make ship3
+	make public
 
 .ONESHELL:
 .PHONY:
