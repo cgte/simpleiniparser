@@ -38,9 +38,14 @@ ship3:
 .PHONY:
 release:
 	bumpversion minor
-	git push
+	git push origin `git describe --abbrev=0 --tag`
 	make ship2
 	make ship3
+
+.ONESHELL:
+.PHONY:
+public:
+	twine upload --verbose -r realpypi dist/*`git describe --abbrev=0 --tag`*
 
 
 .ONESHELL:
