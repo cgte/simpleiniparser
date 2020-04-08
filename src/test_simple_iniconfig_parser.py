@@ -7,8 +7,8 @@ import tempfile
 
 from unittest import TestCase
 
-from .utils import from_self
-from .simple_iniconfig_parser import from_path, from_string, from_fp
+from simpleiniparser.utils import from_self
+from simpleiniparser.simple_iniconfig_parser import from_path, from_string, from_fp
 
 sample_source_content = """
 [SECTION]

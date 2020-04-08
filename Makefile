@@ -53,7 +53,17 @@ public:
 .ONESHELL:
 .PHONY:
 cleanbuild:
-	rm  dist/*
+	find . -name "*.egg-info" | xargs rm -r  || true
+
+
+.ONESHELL:
+.PHONY:
+test2: cleanbuild
+	find . -name "*.pyc" -delete
+	. venv2/bin/activate
+	pytest
+
+
 
 .ONESHELL:
 .PHONY:

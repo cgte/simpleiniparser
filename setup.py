@@ -1,4 +1,5 @@
 from setuptools import setup
+from setuptools import find_packages
 from os import path
 
 here = path.abspath(path.dirname(__file__))
@@ -21,9 +22,9 @@ except TypeError:  # Python2
 
 long_description_content_type = "text/markdown"
 url = "https://github.com/cgte/simpleiniparser"
-packages = [
-    "simpleiniparser",
-]
+
+packages = packages = find_packages("src")
+package_dir = {"": "src"}
 package_data = {}
 install_requires = []
 test_requires = []
@@ -51,6 +52,7 @@ setup(
     long_description_content_type=long_description_content_type,
     url=url,
     packages=packages,
+    package_dir=package_dir,
     package_data=package_data,
     install_requires=install_requires,
     extras_require=extras_require,
@@ -59,5 +61,4 @@ setup(
     license=license,
     classifiers=classifiers,
     keywords=keywords,
-    # package_dir=package_dir,
 )
