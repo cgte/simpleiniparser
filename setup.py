@@ -5,7 +5,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 name = "simpleiniparser"
-version = "0.2.1"
+version = "0.3.0"
 description = "Simple tooling to seamlessly parse ini file"
 long_description = """
 It may feel boring to rewrite a parser fore every project you start.
