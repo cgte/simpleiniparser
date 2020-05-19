@@ -21,6 +21,7 @@ boolean=False
 comma_list_s='abc','def'
 comma_list_i=1,2,3
 comma_list_f=1.0,2.5,3
+mapping={'key': 'value', 'keys': ['value1', 'value2']}
 """
 
 
@@ -70,3 +71,8 @@ class TestFactories(TestCase):
             "item1",
             "item2",
         ]
+
+    def test_dict(self):
+
+        section = from_string(sample_source_content)["SECTION"]
+        assert section["mapping"] == {"key": "value", "keys": ["value1", "value2"]}
